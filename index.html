@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daniel Koceja's Snake</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+        <style>
+            html {
+                margin: 0px;
+                background-color: white;
+            }
+
+            body {
+                margin: 0px;
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                color: black;
+            }
+
+            #header {
+                padding-top: 5vh;
+                padding-bottom: 5vh;
+            }
+
+            #header h1 {
+                margin: 0px;
+            }
+
+            #nodeForm {
+                padding-top: 10px;
+                padding-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header-container">
+                <div id="header">
+                    <h1>Complete Graphs</h1>
+                </div>
+            </div>
+            <div id="graph-container">
+
+                <canvas id="graph">
+    
+                </canvas>
+            </div>
+
+            <div id="form-container">
+                <form id="nodeForm">
+                    <label for="fname">Number of Nodes:</label><br>
+                    <input type="text" pattern="^[0-9]*$" id="nodes" name="nodes"><br>
+                  </form>
+            </div>
+        </div>
+        
+        <script src="graph.js">
+
+        </script>
+        <noscript>
+            <style type="text/css">
+                #container {display:none;}
+            </style>
+            <div class="noscriptmsg">
+                <h1>You don't have javascript enabled. Please enable javascript to play this game.</h1>
+            </div>
+        </noscript>
+    </body>
+</html>
