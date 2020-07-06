@@ -1,9 +1,6 @@
 var canvas;
 var ctx;
 
-var warned = false;
-
-
 window.onload = () => {
     canvas = document.getElementById("graph");
     ctx = canvas.getContext("2d");
@@ -38,14 +35,9 @@ function init() {
 function getNumOfNodes(e) {
     e.preventDefault();
     numOfNodes = parseInt($('#nodes').val());
-    if (numOfNodes > 1263) {
-        if (!confirm("Warning: large numbers will take a long time to process and will not show up well on standard resolution screens. This may crash your page. Do you still want to continue?")) {
-            return;
-        }
-    }
-    if (numOfNodes > 200 && !warned) {
-        alert("Large number of nodes may result not being able to distinguish between each line (graph is solid).")
-        warned = true;
+    if (numOfNodes > 200) {
+        alert("Large number of nodes will result not being able to distinguish between each line (graph is solid). Please pick a smaller number.")
+        return;
     }
     nodes = [];
     ctx.lineWidth = 1/(2* Math.log(numOfNodes + 1)) + 1/numOfNodes;
